@@ -10,6 +10,6 @@ jobs:
         uses: alejandra-jamilis/sonar-build-breaker-action@master
         id: check
         with:
-          sonarqube_url: http://localhost:9000
-          sonarqube_token: ac228b8069925ed931ab86de9374f6dd4e969612
-          task_id: AXbUhkZiThlkP7N-gl2t
+          sonarqube_url: https://desa-sonar.bluex.cl
+          sonarqube_token: 484c233f4eba6e6adc38bf2c0b7cfa207614c2e0
+          task_id: AXa5OngSVuj3vjvymVTU
