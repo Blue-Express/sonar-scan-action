@@ -5,8 +5,9 @@ jobs:
     runs-on: ubuntu-latest
     name: Test locally with act
     steps:
+      - uses: actions/checkout@v1
       - name: Check Sonar Gate
-        uses: ./ #alejandra-jamilis/sonar-build-breaker-action@master
+        uses: alejandra-jamilis/sonar-build-breaker-action@master
         id: check
         with:
           sonarqube_url: http://localhost:9000
