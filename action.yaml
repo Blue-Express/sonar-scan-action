@@ -1,27 +1,18 @@
 
-# name: "Sonar Build Breaker Github Action"
-# description: "Check the status of the Sonar Quality Gate result"
-# inputs:
-#   sonarqube_url:
-#     description: "URL of your SonarQube instance"
-#     required: true
-#   sonarqube_token:
-#     description: "SonarQube token for the project"
-#     required: true
-#   task_id:
-#     description: "Task id from Properties-file check Quality Gate"
-#     required: true
-# runs:
-#   using: "composite"
-#   steps:
-#     - run: ${{ github.action_path }}/break_build.sh ${{ inputs.sonarqube_url }} ${{ inputs.sonarqube_token }} ${{ inputs.task_id }}
-#       shell: bash
+name: "Sonar Build Breaker Github Action"
+description: "Check the status of the Sonar Quality Gate result"
 inputs:
-  name: 
-    description: 'Your name'
-    default: 'No name provided'
+  sonarqube_url:
+    description: "URL of your SonarQube instance"
+    required: true
+  sonarqube_token:
+    description: "SonarQube token for the project"
+    required: true
+  task_id:
+    description: "Task id from Properties-file check Quality Gate"
+    required: true
 runs:
   using: "composite"
-  steps: 
-    - run: echo Hello ${{ inputs.name }}.
+  steps:
+    - run: ${{ github.action_path }}/break_build.sh ${{ inputs.sonarqube_url }} ${{ inputs.sonarqube_token }} ${{ inputs.task_id }}
       shell: bash
