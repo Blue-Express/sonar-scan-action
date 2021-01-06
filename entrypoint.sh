@@ -10,7 +10,7 @@ if [[ "${GITHUB_EVENT_NAME}" == "pull_request" ]]; then
 	fi
 fi
 
-projectKey = ${INPUT_PROJECTKEY}
+projectKey=${INPUT_PROJECTKEY}
 echo "Executing sonar-scanner $projectKey"
 
 sonar-scanner \
@@ -18,8 +18,8 @@ sonar-scanner \
 -Dsonar.projectKey=${INPUT_PROJECTKEY} \
 -Dsonar.login=${INPUT_SONARQUBE_TOKEN}
 
-path = ${INPUT_PATH}
-taskIdProperty = "ceTaskId"
+path=${INPUT_PATH}
+taskIdProperty="ceTaskId"
 
 echo "Retrieving $taskIdProperty from $path"
 
