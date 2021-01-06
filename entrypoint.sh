@@ -16,6 +16,7 @@ echo "Executing sonar-scanner $projectKey"
 sonar-scanner \
 -Dsonar.host.url=${INPUT_SONARQUBE_URL} \
 -Dsonar.projectKey=${INPUT_PROJECTKEY} \
+-Dsonar.projectName=${INPUT_PROJECTNAME}
 -Dsonar.login=${INPUT_SONARQUBE_TOKEN}
 
 path="/usr/src/.scannerwork/report-task.txt"

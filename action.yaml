@@ -12,8 +12,8 @@ inputs:
     description: "The project's unique key. Allowed characters are: letters, numbers, -, _, . and :, with at least one non-digit."
     required: true
     default: ""
-  path:
-    description: "The path to report scan file"
+  projectName:
+    description: "The project's name"
     required: true
   # task_id:
   #   description: "Task id from Properties-file check Quality Gate"
