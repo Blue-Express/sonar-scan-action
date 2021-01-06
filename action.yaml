@@ -8,11 +8,23 @@ inputs:
   sonarqube_token:
     description: "SonarQube token for the project"
     required: true
-  task_id:
-    description: "Task id from Properties-file check Quality Gate"
+  projectKey:
+    description: "The project's unique key. Allowed characters are: letters, numbers, -, _, . and :, with at least one non-digit."
     required: true
+    default: ""
+  path:
+    description: "The path to report scan file"
+    required: true
+  # task_id:
+  #   description: "Task id from Properties-file check Quality Gate"
+  #   required: true
+# runs:
+#   using: "composite"
+#   steps:
+#     - run: ${{ github.action_path }}/break_build.sh ${{ inputs.sonarqube_url }} ${{ inputs.sonarqube_token }} ${{ inputs.task_id }}
+#       shell: bash
 runs:
-  using: "composite"
-  steps:
-    - run: ${{ github.action_path }}/break_build.sh ${{ inputs.sonarqube_url }} ${{ inputs.sonarqube_token }} ${{ inputs.task_id }}
-      shell: bash
+  using: "docker"
+  image: "Dockerfile"
+  # args:
+  #   - ${{ inputs.pokemon_id}}
