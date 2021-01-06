@@ -28,5 +28,5 @@ result=$(sed -n "/^[[:space:]]*$taskIdProperty[[:space:]]*=[[:space:]]*/s/^[[:sp
 echo "$taskIdProperty value: $result"
 
 echo "Executing break_build.sh...."
-pwd
-sh ./break_build.sh ${INPUT_SONARQUBE_URL} ${INPUT_SONARQUBE_TOKEN} $result
+
+sh /break_build.sh ${INPUT_SONARQUBE_URL} ${INPUT_SONARQUBE_TOKEN} $result
