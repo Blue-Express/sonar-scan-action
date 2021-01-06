@@ -18,7 +18,7 @@ sonar-scanner \
 -Dsonar.projectKey=${INPUT_PROJECTKEY} \
 -Dsonar.login=${INPUT_SONARQUBE_TOKEN}
 
-path=${INPUT_PATH}
+path="/usr/src/.scannerwork/report-task.txt"
 taskIdProperty="ceTaskId"
 
 echo "Retrieving $taskIdProperty from $path"
