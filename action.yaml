@@ -14,17 +14,14 @@ inputs:
     default: ""
   projectName:
     description: "The project's name"
-    required: true
-  # task_id:
-  #   description: "Task id from Properties-file check Quality Gate"
-  #   required: true
-# runs:
-#   using: "composite"
-#   steps:
-#     - run: ${{ github.action_path }}/break_build.sh ${{ inputs.sonarqube_url }} ${{ inputs.sonarqube_token }} ${{ inputs.task_id }}
-#       shell: bash
+    required: false
+  projectVersion:
+    description: "The project's version"
+    required: false
+  projectBaseDir:
+    description: "Set the sonar.projectBaseDir analysis property"
+    required: false
+    default: "."
 runs:
   using: "docker"
   image: "Dockerfile"
-  # args:
-  #   - ${{ inputs.pokemon_id}}
