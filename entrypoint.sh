@@ -37,7 +37,7 @@ else
     -Dsonar.password=""
 fi
 
-path="/usr/src/.scannerwork/report-task.txt"
+path=".scannerwork/report-task.txt"
 taskIdProperty="ceTaskId"
 
 echo "Retrieving $taskIdProperty from $path"
