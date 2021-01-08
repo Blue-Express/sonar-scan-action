@@ -1,17 +1,19 @@
 #!/bin/bash
-
+# This script executes sonar-scanner for the conifgured GitHub project,
+# then recovers the task id from the scan report and check the result
+# according to the Quality Gate in Sonar.
 set -euo pipefail
 
 if [[ "${GITHUB_EVENT_NAME}" == "pull_request" ]]; then
 	EVENT_ACTION=$(jq -r ".action" "${GITHUB_EVENT_PATH}")
 	if [[ "${EVENT_ACTION}" != "opened" ]]; then
-		echo "No need to run analysis. It is already triggered by the push event."
+		echo "SC Script --> No need to run analysis. It is already triggered by the push event."
 		exit
 	fi
 fi
 
 projectKey=${INPUT_PROJECTKEY}
-echo "Executing sonar-scanner $projectKey"
+echo "SC Script --> Executing sonar-scanner $projectKey"
 
 REPOSITORY_NAME=$(basename "${GITHUB_REPOSITORY}")
 
@@ -40,12 +42,12 @@ fi
 path=".scannerwork/report-task.txt"
 taskIdProperty="ceTaskId"
 
-echo "Retrieving $taskIdProperty from $path"
+echo "SC Script --> Retrieving $taskIdProperty from $path"
 
 result=$(sed -n "/^[[:space:]]*$taskIdProperty[[:space:]]*=[[:space:]]*/s/^[[:space:]]*$taskIdProperty[[:space:]]*=[[:space:]]*//p" "$path")
 
-echo "$taskIdProperty value: $result"
+echo "SC Script --> $taskIdProperty value: $result"
 
-echo "Executing break_build.sh...."
+echo "SC Script --> Executing break_build.sh...."
 
 sh /break_build.sh ${INPUT_SONARQUBE_URL} ${INPUT_SONARQUBE_TOKEN} $result

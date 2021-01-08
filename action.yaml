@@ -1,6 +1,6 @@
 
-name: "Sonar Build Breaker Github Action"
-description: "Check the status of the Sonar Quality Gate result"
+name: "Sonar Scan and Check Github Action"
+description: "Scan with SonarQube and check the status of the Sonar Quality Gate result"
 inputs:
   sonarqube_url:
     description: "URL of your SonarQube instance"
@@ -9,7 +9,7 @@ inputs:
     description: "SonarQube token for the project"
     required: true
   projectKey:
-    description: "The project's unique key. Allowed characters are: letters, numbers, -, _, . and :, with at least one non-digit."
+    description: "The project's unique key."
     required: true
     default: ""
   projectName:
@@ -19,7 +19,7 @@ inputs:
     description: "The project's version"
     required: false
   projectBaseDir:
-    description: "Set the sonar.projectBaseDir analysis property"
+    description: "The project's source base directory"
     required: false
     default: "."
 runs:
