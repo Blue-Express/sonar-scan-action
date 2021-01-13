@@ -37,5 +37,5 @@ with:
 
 ## Secrets
 
-- `host` - **_(Required)_** this is the SonarQube server URL.
-- `login` - **_(Required)_** the login or authentication token of a SonarQube user with Execute Analysis permission on the project. 
+- `SONAR_HOST` - **_(Required)_** this is the SonarQube server URL.
+- `SONAR_TOKEN` - **_(Required)_** the login or authentication token of a SonarQube user with Execute Analysis permission on the project. 
