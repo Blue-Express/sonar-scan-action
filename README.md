@@ -19,7 +19,7 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - name: SonarQube Scan
-      uses: alejandra-jamilis/sonar-scan-action@master
+      uses: Blue-Express/sonar-scan-action@master
       with:
         sonarqube_url: ${{ secrets.SONAR_HOST }}
         sonarqube_token: ${{ secrets.SONAR_TOKEN }}
@@ -28,7 +28,7 @@ jobs:
 Analysis base directory/project name/version can be changed with the optional inputs:
 
 ```yaml
-uses: alejandra-jamilis/sonar-scan-action@master
+uses: Blue-Express/sonar-scan-action@master
 with:
   projectBaseDir: "/path/to/my-project"
   projectName: "my-project-name"
