@@ -22,6 +22,9 @@ inputs:
     description: "The project's source base directory"
     required: false
     default: "."
+  binaries:
+    description: "The project's binaries's directory"
+    required: false
 runs:
   using: "docker"
   image: "Dockerfile"
