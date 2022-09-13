@@ -36,7 +36,8 @@ else
     -Dsonar.host.url=${INPUT_SONARQUBE_URL} \
     -Dsonar.projectBaseDir=${INPUT_PROJECTBASEDIR} \
     -Dsonar.login=${INPUT_SONARQUBE_TOKEN} \
-    -Dsonar.password=""
+    -Dsonar.password="" \
+    -Dsonar.java.binaries=${INPUT_BINARIES}
 fi
 
 path=".scannerwork/report-task.txt"
